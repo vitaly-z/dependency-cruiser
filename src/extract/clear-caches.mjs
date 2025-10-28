@@ -1,3 +1,4 @@
+import { clearCache as regex_clearCache } from "../utl/regex-cache.mjs"
 import { clearCache as tscClearCache } from "./tsc/parse.mjs";
 import { clearCache as acornClearCache } from "./acorn/parse.mjs";
 import { clearCache as swcClearCache } from "./swc/parse.mjs";
@@ -7,6 +8,7 @@ import { clearCache as resolveAMD_clearCache } from "./resolve/resolve-amd.mjs";
 import { clearCache as resolve_clearCache } from "./resolve/resolve.mjs";
 
 export default function clearCaches() {
+  regex_clearCache();
   tscClearCache();
   acornClearCache();
   swcClearCache();
